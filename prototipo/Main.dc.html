@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>BluTeam — Landing escritorio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap">
+  <style>
+    body { margin: 0; font-family: Quicksand, "Segoe UI", sans-serif; background: #F5F9FD; }
+    a { color: #0A57BE; } a:hover { color: #063F8C; }
+  </style>
+  <style>
+@keyframes dc-fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes dc-viento{0%{transform:translate(-60px,0) rotate(calc(var(--rot,0deg) - 4deg));opacity:0}8%{opacity:1}30%{transform:translate(118px,-30px) rotate(calc(var(--rot,0deg) + 9deg))}55%{transform:translate(269px,9px) rotate(calc(var(--rot,0deg) - 7deg))}80%{transform:translate(420px,-21px) rotate(calc(var(--rot,0deg) + 5deg))}92%{opacity:1}100%{transform:translate(560px,0) rotate(calc(var(--rot,0deg) - 4deg));opacity:0}}
+@keyframes dc-drift{0%{transform:translateX(-70px);opacity:0}14%{opacity:.85}86%{opacity:.85}100%{transform:translateX(520px);opacity:0}}
+@keyframes dc-rise{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+.pluma{animation:dc-viento 15s linear infinite}
+.pluma:nth-of-type(2n){animation-duration:19s;animation-delay:-7s}
+.pluma:nth-of-type(3n){animation-duration:12s;animation-delay:-4s}
+.pluma:nth-of-type(5n){animation-duration:22s;animation-delay:-13s}
+.nube{animation:dc-drift 64s linear infinite}
+.nube:nth-of-type(2n){animation-duration:82s;animation-delay:-30s}
+.nube:nth-of-type(3n){animation-duration:71s;animation-delay:-55s}
+#inicio>div{animation:dc-fade-up .8s ease backwards}
+#paquetes,#portafolio,#resenas,#contacto{animation:dc-fade-up .7s ease backwards;animation-delay:.1s}
+.tarjeta{animation:dc-rise .6s ease backwards;transition:transform .22s ease,box-shadow .22s ease}
+.tarjeta:nth-child(2){animation-delay:.08s}
+.tarjeta:nth-child(3){animation-delay:.16s}
+.tarjeta:nth-child(4){animation-delay:.24s}
+.tarjeta:hover{transform:translateY(-8px);box-shadow:0 28px 52px rgba(8,48,102,.2)}
+.obra>:first-child{transition:transform .35s ease}
+.obra:hover>:first-child{transform:scale(1.06)}
+a,button{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,opacity .18s ease}
+a:hover,button:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(8,48,102,.18)}
+a:active,button:active{transform:translateY(0);box-shadow:none}
+nav a:hover{background:#EAF3FC;box-shadow:none;transform:none}
+input,select,textarea{transition:box-shadow .18s ease}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(10,87,190,.25)}
+video{transition:transform .4s ease}
+video:hover{transform:scale(1.03)}
+.flip{perspective:1400px}
+.flip .flip-inner{position:relative;width:100%;height:100%;transition:transform .75s cubic-bezier(.2,.7,.3,1);transform-style:preserve-3d}
+.flip:hover .flip-inner{transform:rotateY(180deg)}
+.flip-cara{position:absolute;top:0;left:0;width:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flip-atras{transform:rotateY(180deg)}
+.flip.tarjeta:hover{transform:none;box-shadow:none}
+.marquee{overflow:hidden;margin-top:48px}
+.marquee-pista{display:flex;gap:26px;width:max-content;animation:dc-carrusel 34s linear infinite}
+.marquee:hover .marquee-pista{animation-play-state:paused}
+@keyframes dc-carrusel{from{transform:translateX(0)}to{transform:translateX(-1338px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+  </style>
+</helmet>
+<div style="width: 1440px; height: 4450px; box-sizing: border-box; overflow: hidden; background: #F5F9FD; color: #10243A;">
+
+  <!-- ============ HERO ============ -->
+  <div id="inicio" style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; overflow: hidden; background: linear-gradient(180deg, #0A57BE 0%, #1B79DC 42%, #86C2EE 78%, #EAF4FC 100%);">
+
+    <!-- nubes -->
+    <div class="nube" style="position: absolute; left: -140px; top: 616px; width: 440px; height: 170px; border-radius: 999px; background: #FFFFFF; opacity: 0.85; filter: blur(14px);"></div>
+    <div class="nube" style="position: absolute; left: 640px; top: 700px; width: 330px; height: 140px; border-radius: 999px; background: #FFFFFF; opacity: 0.7; filter: blur(18px);"></div>
+    <div class="nube" style="position: absolute; right: -60px; top: 520px; width: 480px; height: 170px; border-radius: 999px; background: #FFFFFF; opacity: 0.6; filter: blur(22px);"></div>
+    <div class="nube" style="position: absolute; left: 180px; bottom: -40px; width: 620px; height: 220px; border-radius: 999px; background: #FFFFFF; opacity: 0.9; filter: blur(20px);"></div>
+    <div class="nube" style="position: absolute; right: 120px; bottom: -60px; width: 700px; height: 240px; border-radius: 999px; background: #FFFFFF; opacity: 0.85; filter: blur(24px);"></div>
+
+    <!-- plumas -->
+    <div class="pluma" style="position: absolute; left: 826px; top: 214px; transform: rotate(-24deg); --rot: -24deg;">
+      <img src="/_blob/e937974ebbad4644e7a72ea2947d2362" alt="" style="display: block; width: 230px; height: 149px;">
+    </div>
+    <div class="pluma" style="position: absolute; left: 380px; top: 640px; transform: rotate(38deg); --rot: 38deg;">
+      <img src="/_blob/a4d8e8d71631b2cd8cea1794dff3aa7e" alt="" style="display: block; width: 96px; height: 96px;">
+    </div>
+    <div class="pluma" style="position: absolute; right: 12px; top: 552px; transform: rotate(18deg); --rot: 18deg;">
+      <img src="/_blob/147f8340e66c79b2cc577d8eaa47b72b" alt="" style="display: block; width: 120px; height: 112px;">
+    </div>
+    <div class="pluma" style="position: absolute; left: 700px; top: 600px; transform: rotate(-58deg); --rot: -58deg;">
+      <img src="/_blob/4e099d270f70a0f2655584544da7f254" alt="" style="display: block; width: 110px; height: 81px;">
+    </div>
+    <div class="pluma" style="position: absolute; left: 566px; top: 688px; transform: rotate(-12deg); --rot: -12deg;">
+      <img src="/_blob/8cc9997f19a3b75ae409d79e1a6fc029" alt="" style="display: block; width: 150px; height: 97px;">
+    </div>
+    <svg style="position: absolute; left: 150px; top: 600px;" width="420" height="180" viewBox="0 0 420 180" fill="none" aria-hidden="true">
+      <path d="M8 40 C 120 10, 180 130, 300 100 C 370 82, 400 120, 412 160" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"></path>
+    </svg>
+
+    <!-- nav -->
+    <div style="position: absolute; left: 0; top: 0; width: 1440px; box-sizing: border-box; padding: 34px 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background-color: #0a57be">
+      <a href="#inicio" style="display: flex; align-items: center; justify-content: center; width: 112px; height: 112px; background: #FFFFFF; border-radius: 26px; box-shadow: 0 10px 26px rgba(8, 48, 102, 0.18);">
+        <img src="/_blob/034a8c77c56c3dabdce0d4c4ac7e9948" alt="Mukurus" style="width: 96px; height: 96px; object-fit: contain;">
+      </a>
+      <nav style="display: flex; align-items: center; gap: 4px; padding: 6px; background: #FFFFFF; border-radius: 999px; box-shadow: 0 10px 26px rgba(8, 48, 102, 0.18);">
+        <a href="#inicio" style="display: block; padding: 13px 26px; border-radius: 999px; background: #0A57BE; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600;">Inicio</a>
+        <a href="#paquetes" style="display: block; padding: 13px 26px; border-radius: 999px; color: #10243A; text-decoration: none; font-size: 16px; font-weight: 600;">Paquetes</a>
+        <a href="#portafolio" style="display: block; padding: 13px 26px; border-radius: 999px; color: #10243A; text-decoration: none; font-size: 16px; font-weight: 600;">Portafolio</a>
+        <a href="#resenas" style="display: block; padding: 13px 26px; border-radius: 999px; color: #10243A; text-decoration: none; font-size: 16px; font-weight: 600;">Reseñas</a>
+        <a href="#contacto" style="display: block; padding: 13px 26px; border-radius: 999px; color: #10243A; text-decoration: none; font-size: 16px; font-weight: 600;">Contacto</a>
+      </nav>
+      <a href="https://wa.me/50588239594" style="display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 600;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12.04 2.01a9.9 9.9 0 0 0-8.4 15.15L2.05 22l4.96-1.55a9.9 9.9 0 1 0 5.03-18.44zm0 1.8a8.1 8.1 0 1 1-4.1 15.08l-.3-.17-2.94.92.94-2.87-.2-.31a8.1 8.1 0 0 1 6.6-12.65z" fill="#FFFFFF"></path>
+          <path d="M16.12 14.13c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.6.14-.18.27-.7.87-.85 1.05-.16.18-.32.2-.59.07a6.6 6.6 0 0 1-3.3-2.88c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.43-.07-.14-.6-1.45-.83-1.98-.22-.52-.44-.45-.6-.46h-.52c-.18 0-.47.07-.72.34-.25.27-.95.92-.95 2.25s.97 2.61 1.11 2.79c.14.18 1.92 2.93 4.65 4.11 1.72.74 2.4.8 3.26.68.53-.08 1.6-.65 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32z" fill="#FFFFFF"></path>
+        </svg>
+        Escribime
+      </a>
+    </div>
+
+    <!-- titular -->
+    <div style="position: absolute; left: 72px; top: 196px; width: 730px; display: flex; flex-direction: column; align-items: flex-start; gap: 28px;">
+      <h1 style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 86px; line-height: 1.04; font-weight: 400; color: #FFFFFF; letter-spacing: -1.5px"><span>Somos Aves,<br>nuestra forma de volar es&nbsp;</span>&nbsp;<font color="#a9e9e4">crear</font></h1>
+      <p style="margin: 0; max-width: 560px; font-size: 20px; line-height: 1.55; color: #FFFFFF;"><b>
+        +90% de las marcas</b> que han<b> trabajado</b> con<b> nuestra bandada</b> siguen<b> llevando sus ideas más lejos.
+      </b></p>
+      <div style="display: flex; align-items: center; gap: 18px;">
+        <a href="#paquetes" style="display: flex; align-items: center; gap: 14px; padding: 19px 34px; border-radius: 999px; background: {{accent}}; color: #1B2A3A; text-decoration: none; font-size: 19px; font-weight: 700; box-shadow: 0 12px 28px rgba(8, 48, 102, 0.25);">
+          Ver paquetes
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 12h15M13 6l6 6-6 6" stroke="#1B2A3A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a href="#portafolio" style="display: block; padding: 19px 34px; border-radius: 999px; border: 2px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-size: 19px; font-weight: 600;">Ver portafolio</a>
+      </div>
+    </div>
+
+    <!-- video vertical del equipo -->
+    <div style="position: absolute; right: 104px; top: 178px; width: 332px; height: 590px; padding: 12px; box-sizing: border-box; background: #FFFFFF; border-radius: 34px; box-shadow: 0 26px 52px rgba(8, 48, 102, 0.26);">
+      <div style="position: relative; width: 308px; height: 566px; border-radius: 24px; overflow: hidden; background: #123C6E;">
+        <video src="/_blob/7c3b6d8620e5de834644012a2ccd5b43" autoplay="" loop="" muted="" playsinline="" style="display: block; width: 308px; height: 566px; object-fit: cover;"></video>
+        
+      </div>
+    </div>
+
+    <!-- tarjeta flotante: métrica -->
+    <div style="position: absolute; left: 852px; top: 548px; width: 250px; padding: 20px; box-sizing: border-box; background: #FFFFFF; border-radius: 22px; box-shadow: 0 18px 38px rgba(8, 48, 102, 0.18); transform: rotate(-3deg);">
+      <span style="font-size: 14px; font-weight: 600; color: #46607C;">Alcance del mes</span>
+      <div style="font-family: Copeland, Georgia, serif; font-size: 40px; font-weight: 700; color: #0A57BE; margin-top: 4px;">+10 marcas</div>
+      <div style="display: flex; gap: 6px; align-items: flex-end; height: 44px; margin-top: 10px;">
+        <div style="width: 16px; height: 40%; border-radius: 5px; background: #BFDCF6;"></div>
+        <div style="width: 16px; height: 62%; border-radius: 5px; background: #8FC3EE;"></div>
+        <div style="width: 16px; height: 50%; border-radius: 5px; background: #BFDCF6;"></div>
+        <div style="width: 16px; height: 86%; border-radius: 5px; background: #0A57BE;"></div>
+        <div style="width: 16px; height: 70%; border-radius: 5px; background: #8FC3EE;"></div>
+      </div>
+    </div>
+
+    <!-- claim inferior -->
+    <div style="position: absolute; left: 72px; bottom: 54px; max-width: 420px;">
+      <p style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 34px; line-height: 1.22; font-weight: 600; color: #0D3260;">
+        Diseño con intención,<br>redes con <span style="color: #063f8c">estrategia</span>
+      </p>
+    </div>
+    <div style="position: absolute; right: 72px; bottom: 58px; text-align: right;">
+      <p style="margin: 0; font-size: 15px; font-weight: 600; color: #0D3260; letter-spacing: 1.4px; text-transform: uppercase;">AGENCIA CREATIVA · NICARAGUA</p>
+      <p style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 30px; font-weight: 700; color: #0D3260;">+3 años de marcas</p>
+    </div>
+  </div>
+
+  <!-- ============ PAQUETES ============ -->
+  <div id="paquetes" style="width: 1440px; height: 1250px; box-sizing: border-box; padding: 84px 72px 0; background: #F5F9FD;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;">
+      <div style="max-width: 660px;">
+        <span style="font-size: 14px; font-weight: 400; letter-spacing: 1.6px; text-transform: uppercase; color: #0A57BE">PAQUETES</span>
+        <h2 style="margin: 12px 0 0; font-family: Copeland, Georgia, serif; font-size: 54px; line-height: 1.1; font-weight: 600; color: #10243A; letter-spacing: -1px;">Elegí a qué altura querés volar</h2>
+      </div>
+      <p style="margin: 0; max-width: 340px; font-size: 18px; line-height: 1.6; color: #46607C; width: 397px; height: 117px"><b>Precios en dólares.</b> Los paquetes mensuales requieren un <b>mínimo de permanencia de 2 meses.</b> La <b>pauta publicitaria</b> se cotiza <b>aparte.</b></p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 48px;">
+
+            <div class="tarjeta flip" style="height: 520px;">
+        <div class="flip-inner">
+          <div class="flip-cara" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 24px; display: flex; flex-direction: column; gap: 18px;">
+        <div>
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0A57BE;">Nido</span>
+          <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #10243A;">Especial Emprendedores</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 7px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #0A57BE;">USD 80</span>
+          <span style="font-size: 15px; color: #46607C;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">4 publicaciones al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">4 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">1 reel corto al mes (hasta 20 seg)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Programación de contenido</li>
+        </ul>
+                </div>
+          <div class="flip-cara flip-atras" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #0A2A50; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; gap: 18px;">
+            <div>
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #A9E9E4;">Nido</span>
+              <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #FFFFFF;">Especial Emprendedores</h3>
+            </div>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #D6E8FA;">Ideal para marcas que están iniciando su presencia digital de forma ordenada.</p>
+            <div style="display: flex; align-items: baseline; gap: 7px;">
+            <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #FFFFFF;">USD 80</span>
+            <span style="font-size: 15px; color: #D6E8FA;">/ mes</span>
+            </div>
+            <a href="#contacto" style="display: block; padding: 14px 20px; border-radius: 999px; background: {{accent}}; color: #1F1F1F; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta flip" style="height: 520px;">
+        <div class="flip-inner">
+          <div class="flip-cara" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 24px; display: flex; flex-direction: column; gap: 18px;">
+        <div>
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0A57BE;">Nido</span>
+          <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #10243A;">Esencial</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 7px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #0A57BE;">USD 110</span>
+          <span style="font-size: 15px; color: #46607C;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 11px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">8 publicaciones al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">4 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">1 reel corto al mes (hasta 30 seg)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">1 sesión fotográfica básica (15–20 fotos editadas)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Programación y respuesta básica a comentarios</li>
+        </ul>
+                </div>
+          <div class="flip-cara flip-atras" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #0A2A50; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; gap: 18px;">
+            <div>
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #A9E9E4;">Nido</span>
+              <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #FFFFFF;">Esencial</h3>
+            </div>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #D6E8FA;">Ideal para marcas que están retomando o iniciando su presencia digital de forma ordenada.</p>
+            <div style="display: flex; align-items: baseline; gap: 7px;">
+            <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #FFFFFF;">USD 110</span>
+            <span style="font-size: 15px; color: #D6E8FA;">/ mes</span>
+            </div>
+            <a href="#contacto" style="display: block; padding: 14px 20px; border-radius: 999px; background: {{accent}}; color: #1F1F1F; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta flip" style="height: 520px;">
+        <div class="flip-inner">
+          <div class="flip-cara" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #0A57BE; border-radius: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 22px 44px rgba(10, 87, 190, 0.28);">
+        <div>
+          <span style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: {{accent}}; color: #1B2A3A; font-size: 12px; font-weight: 700;">El más elegido</span>
+          <div style="margin-top: 10px; font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #A9E9E4;">Vuelo</div>
+          <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #FFFFFF;">Crecimiento</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 7px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #FFFFFF;">USD 170</span>
+          <span style="font-size: 15px; color: #D6E8FA;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.35; color: #EAF4FD;">12 publicaciones al mes (posts y carruseles)</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #EAF4FD;">8 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #EAF4FD;">3 reels cortos al mes</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #EAF4FD;">1 sesión fotográfica ampliada (20–25 fotos)</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #EAF4FD;">Estrategia y calendario editorial mensual</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #EAF4FD;">Gestión activa de comentarios y mensajes</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #EAF4FD;">Reporte mensual de métricas</li>
+        </ul>
+                </div>
+          <div class="flip-cara flip-atras" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #0A2A50; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; gap: 18px;">
+            <div>
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #A9E9E4;">Vuelo</span>
+              <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #FFFFFF;">Crecimiento</h3>
+            </div>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #D6E8FA;">Nuestro paquete más elegido por marcas personales y negocios ya establecidos que buscan crecer con consistencia.</p>
+            <div style="display: flex; align-items: baseline; gap: 7px;">
+            <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #FFFFFF;">USD 170</span>
+            <span style="font-size: 15px; color: #D6E8FA;">/ mes</span>
+            </div>
+            <a href="#contacto" style="display: block; padding: 14px 20px; border-radius: 999px; background: {{accent}}; color: #1F1F1F; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta flip" style="height: 520px;">
+        <div class="flip-inner">
+          <div class="flip-cara" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 24px; display: flex; flex-direction: column; gap: 18px;">
+        <div>
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0A57BE;">Cielo</span>
+          <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #10243A;">Premium</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 7px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #0A57BE;">USD 250</span>
+          <span style="font-size: 15px; color: #46607C;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">20 publicaciones al mes (posts y carruseles)</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">12 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">4 reels cortos al mes</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">2 sesiones fotográficas (1 ampliada + 1 básica)</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Calendario estratégico y apoyo en campañas pagadas</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Reporte detallado y reunión mensual de resultados</li>
+        </ul>
+                </div>
+          <div class="flip-cara flip-atras" style="box-sizing: border-box; height: 520px; padding: 32px 28px; background: #0A2A50; border-radius: 24px; display: flex; flex-direction: column; justify-content: center; gap: 18px;">
+            <div>
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #A9E9E4;">Cielo</span>
+              <h3 style="margin: 6px 0 0; font-family: Copeland, Georgia, serif; font-size: 27px; line-height: 1.15; font-weight: 600; color: #FFFFFF;">Premium</h3>
+            </div>
+            <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #D6E8FA;">Para marcas que ya facturan de forma estable y quieren consolidar su lugar como referentes en su sector.</p>
+            <div style="display: flex; align-items: baseline; gap: 7px;">
+            <span style="font-family: Copeland, Georgia, serif; font-size: 38px; font-weight: 700; color: #FFFFFF;">USD 250</span>
+            <span style="font-size: 15px; color: #D6E8FA;">/ mes</span>
+            </div>
+            <a href="#contacto" style="display: block; padding: 14px 20px; border-radius: 999px; background: {{accent}}; color: #1F1F1F; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 56px; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;">
+      <h3 style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 32px; font-weight: 600; color: #10243A;">Paquetes complementarios</h3>
+      <p style="margin: 0; max-width: 430px; font-size: 16px; line-height: 1.6; color: #46607C;">Resuelven la pieza que falta antes o durante un paquete principal. Al combinarlos se aplica un descuento a convenir.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px;">
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 210px; padding: 30px 32px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 24px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
+          <div>
+            <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0F8F89;">Plumaje</span>
+            <h4 style="margin: 4px 0 0; font-family: Copeland, Georgia, serif; font-size: 26px; font-weight: 600; color: #10243A;">Identidad de marca</h4>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-family: Copeland, Georgia, serif; font-size: 30px; font-weight: 700; color: #0A57BE;">USD 250</div>
+            <div style="font-size: 14px; color: #46607C;">proyecto único</div>
+          </div>
+        </div>
+        <ul style="margin: 18px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 20px;">
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Logotipo y variaciones</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Paleta y tipografía de marca</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Manual básico de uso de marca</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Plantillas base para redes</li>
+        </ul>
+      </div>
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 210px; padding: 30px 32px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 24px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px;">
+          <div>
+            <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0F8F89;">Hábitat</span>
+            <h4 style="margin: 4px 0 0; font-family: Copeland, Georgia, serif; font-size: 26px; font-weight: 600; color: #10243A;">Diseño web</h4>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-family: Copeland, Georgia, serif; font-size: 30px; font-weight: 700; color: #0A57BE;">USD 400</div>
+            <div style="font-size: 14px; color: #46607C;">proyecto único</div>
+          </div>
+        </div>
+        <ul style="margin: 18px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 20px;">
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Sitio de 3 a 5 secciones</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Diseño responsive</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Integración con redes y WhatsApp</li>
+          <li style="font-size: 15px; line-height: 1.35; color: #24405C;">Velocidad y SEO on-page básico</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p style="margin: 28px 0 0; text-align: center; font-size: 16px; color: #46607C;"><b>¿Necesitás una pieza suelta? Hay tarifarios individuales.</b> <a href="#contacto" style="font-weight: 700; text-decoration: none">Pedí el tarifario completo</a></p>
+  </div>
+
+  <!-- ============ PORTAFOLIO ============ -->
+  <div id="portafolio" style="width: 1440px; height: 820px; box-sizing: border-box; padding: 80px 72px 0; background: #FFFFFF;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;">
+      <div>
+        <span style="font-size: 14px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0A57BE;">Portafolio</span>
+        <h2 style="margin: 12px 0 0; font-family: Copeland, Georgia, serif; font-size: 54px; line-height: 1.1; font-weight: 600; color: #10243A; letter-spacing: -1px;">Marcas con las que trabajé</h2>
+      </div>
+      <a href="#contacto" style="font-size: 17px; font-weight: 600; color: #0A57BE; text-decoration: none;">Pedir el portafolio completo</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 48px;">
+
+      <div class="tarjeta obra" style="border-radius: 26px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <img src="/_blob/4ec27d37496f5ddb76f833c3e1ed0e2c" alt="Branding para China Mall Corporative" style="display: block; width: 100%; height: 210px; object-fit: cover;">
+        <div style="padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div>
+            <h3 style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 25px; font-weight: 600; color: #10243A;">China Mall Corporative</h3>
+            <p style="margin: 6px 0 0; font-size: 15px; color: #46607C;">Community management y piezas para campañas</p>
+          </div>
+          <span style="padding: 7px 14px; border-radius: 999px; background: #EAF3FC; font-size: 13px; font-weight: 700; color: #0A57BE;">Redes</span>
+        </div>
+      </div>
+
+      <div class="tarjeta obra" style="border-radius: 26px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <div style="height: 210px; background: linear-gradient(135deg, #E4573F 0%, #F5B421 100%); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 15px; font-weight: 600; color: #FFFFFF;">[Imagen del proyecto]</span>
+        </div>
+        <div style="padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div>
+            <h3 style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 25px; font-weight: 600; color: #10243A;">Kelly Valle Coach</h3>
+            <p style="margin: 6px 0 0; font-size: 15px; color: #46607C;">Identidad visual y contenido para marca personal</p>
+          </div>
+          <span style="padding: 7px 14px; border-radius: 999px; background: #EAF3FC; font-size: 13px; font-weight: 700; color: #0A57BE;">Marca</span>
+        </div>
+      </div>
+
+      <div class="tarjeta obra" style="border-radius: 26px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <div style="height: 210px; background: linear-gradient(135deg, #0F8F89 0%, #86C2EE 100%); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 15px; font-weight: 600; color: #FFFFFF;">[Imagen del proyecto]</span>
+        </div>
+        <div style="padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div>
+            <h3 style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 25px; font-weight: 600; color: #10243A;">Los Pipitos Nicaragua</h3>
+            <p style="margin: 6px 0 0; font-size: 15px; color: #46607C;">Piezas gráficas para campañas de sensibilización</p>
+          </div>
+          <span style="padding: 7px 14px; border-radius: 999px; background: #EAF3FC; font-size: 13px; font-weight: 700; color: #0A57BE;">Social</span>
+        </div>
+      </div>
+
+      <div class="tarjeta obra" style="border-radius: 26px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <div style="height: 210px; background: linear-gradient(135deg, #1B2A3A 0%, #0A57BE 100%); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 15px; font-weight: 600; color: #FFFFFF;">[Imagen del proyecto]</span>
+        </div>
+        <div style="padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div>
+            <h3 style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 25px; font-weight: 600; color: #10243A;">Nick Tuckler</h3>
+            <p style="margin: 6px 0 0; font-size: 15px; color: #46607C;">Dirección visual y parrilla de contenido</p>
+          </div>
+          <span style="padding: 7px 14px; border-radius: 999px; background: #EAF3FC; font-size: 13px; font-weight: 700; color: #0A57BE;">Contenido</span>
+        </div>
+      </div>
+
+    </div><div id="resenas" style="position: relative; width: 1461px; height: 577px; box-sizing: border-box; padding: 76px 72px 0; overflow: hidden; background: linear-gradient(180deg, #EAF4FC 0%, #D3E8F9 100%)">
+    <div class="pluma" style="position: absolute; right: 90px; top: 92px; transform: rotate(26deg); --rot: 26deg;">
+      <img src="/_blob/4918461d87c0670b5dade0f251d89441" alt="" style="display: block; width: 120px; height: 86px;">
+    </div>
+    <div style="text-align: center;">
+      <span style="font-size: 14px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0A57BE;">Reseñas</span>
+      <h2 style="margin: 12px 0 0; font-family: Copeland, Georgia, serif; font-size: 54px; line-height: 1.1; font-weight: 600; color: #10243A; letter-spacing: -1px;">Lo que dicen Nuestros clientes</h2>
+    </div>
+
+        <div class="marquee">
+      <div class="marquee-pista">
+        <div class="tarjeta" style="box-sizing: border-box; flex: 0 0 420px; width: 420px; height: 274px; padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 14px 30px rgba(8, 48, 102, 0.1);">
+        <div style="display: flex; gap: 4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #24405C; width: 362px; height: 139px">Súper contenta con mi sesión de fotos profesionales. Todo estuvo 100% nítido: la atención, el trato y, sobre todo, el resultado final. Se nota el profesionalismo y el cariño que ponen en su trabajo. Gracias, Mukurus, recomiendo totalmente!</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 999px; background: #0A57BE;"></div>
+          <div>
+            <div style="font-size: 16px; font-weight: 700; color: #10243A;">ALICE MIRANDA</div>
+            <div style="font-size: 14px; color: #46607C;">By Vida Nica</div>
+          </div>
+        </div>
+      </div>
+        <div class="tarjeta" style="box-sizing: border-box; flex: 0 0 420px; width: 420px; height: 274px; padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 14px 30px rgba(8, 48, 102, 0.1);">
+        <div style="display: flex; gap: 4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        </div>
+        <div style="margin: 0; font-size: 18px; line-height: 1.6; color: #24405C;"><p><strong>Así pasé de utilizar contenido genérico&nbsp; a crear contenido con identidad propia. Me contacté con MUKURUS, hicimos una sesión de fotos BRUTAL y, ahora tengo algo completamente original y alineado con mi marca.</strong></p></div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 999px; background: #0F8F89;"></div>
+          <div>
+            <div style="font-size: 16px; font-weight: 700; color: #10243A;">NICK TUCKLER</div>
+            <div style="font-size: 14px; color: #46607C;">Entrenador Personal</div>
+          </div>
+        </div>
+      </div>
+        <div class="tarjeta" style="box-sizing: border-box; flex: 0 0 420px; width: 420px; height: 274px; padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 14px 30px rgba(8, 48, 102, 0.1);">
+        <div style="display: flex; gap: 4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        </div>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #24405C;">Ha sido una experiencia única, ya que son creativos, profesionales, cuidan cada detalle, y entendieron lo que yo quería reflejar para mi marca. En fin un gran equipo...</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 999px; background: #C2481F;"></div>
+          <div>
+            <div style="font-size: 16px; font-weight: 700; color: #10243A;">MOOD MARKET</div>
+            <div style="font-size: 14px; color: #46607C;">Tienda de accesorios femeninos</div>
+          </div>
+        </div>
+      </div>
+        <div class="tarjeta" aria-hidden="true" style="box-sizing: border-box; flex: 0 0 420px; width: 420px; height: 274px; padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 14px 30px rgba(8, 48, 102, 0.1);">
+        <div style="display: flex; gap: 4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        </div>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #24405C; width: 362px; height: 139px">Súper contenta con mi sesión de fotos profesionales. Todo estuvo 100% nítido: la atención, el trato y, sobre todo, el resultado final. Se nota el profesionalismo y el cariño que ponen en su trabajo. Gracias, Mukurus, recomiendo totalmente!</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 999px; background: #0A57BE;"></div>
+          <div>
+            <div style="font-size: 16px; font-weight: 700; color: #10243A;">ALICE MIRANDA</div>
+            <div style="font-size: 14px; color: #46607C;">By Vida Nica</div>
+          </div>
+        </div>
+      </div>
+        <div class="tarjeta" aria-hidden="true" style="box-sizing: border-box; flex: 0 0 420px; width: 420px; height: 274px; padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 14px 30px rgba(8, 48, 102, 0.1);">
+        <div style="display: flex; gap: 4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        </div>
+        <div style="margin: 0; font-size: 18px; line-height: 1.6; color: #24405C;"><p><strong>Así pasé de utilizar contenido genérico&nbsp; a crear contenido con identidad propia. Me contacté con MUKURUS, hicimos una sesión de fotos BRUTAL y, ahora tengo algo completamente original y alineado con mi marca.</strong></p></div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 999px; background: #0F8F89;"></div>
+          <div>
+            <div style="font-size: 16px; font-weight: 700; color: #10243A;">NICK TUCKLER</div>
+            <div style="font-size: 14px; color: #46607C;">Entrenador Personal</div>
+          </div>
+        </div>
+      </div>
+        <div class="tarjeta" aria-hidden="true" style="box-sizing: border-box; flex: 0 0 420px; width: 420px; height: 274px; padding: 32px; background: #FFFFFF; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 14px 30px rgba(8, 48, 102, 0.1);">
+        <div style="display: flex; gap: 4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        </div>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #24405C;">Ha sido una experiencia única, ya que son creativos, profesionales, cuidan cada detalle, y entendieron lo que yo quería reflejar para mi marca. En fin un gran equipo...</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 44px; height: 44px; border-radius: 999px; background: #C2481F;"></div>
+          <div>
+            <div style="font-size: 16px; font-weight: 700; color: #10243A;">MOOD MARKET</div>
+            <div style="font-size: 14px; color: #46607C;">Tienda de accesorios femeninos</div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ============ RESEÑAS ============ -->
+  
+
+  <!-- ============ CONTACTO ============ -->
+  
+
+  <!-- ============ FOOTER ============ -->
+  <div id="contacto" style="width: 1440px; height: 720px; box-sizing: border-box; padding: 80px 72px 0; background: #FFFFFF;">
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px;">
+
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div>
+          <span style="font-size: 14px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: #0A57BE;">Contacto</span>
+          <h2 style="margin: 12px 0 0; font-family: Copeland, Georgia, serif; font-size: 54px; line-height: 1.1; font-weight: 600; color: #10243A; letter-spacing: -1px;">Cuentanos de tu marca</h2>
+          <p style="margin: 16px 0 0; max-width: 460px; font-size: 18px; line-height: 1.6; color: #46607C;">Respondemos en menos de 24 horas hábiles con una propuesta y un rango de inversión.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 8px;">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="width: 44px; height: 44px; border-radius: 14px; background: #EAF3FC; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="#0A57BE" stroke-width="2" stroke-linejoin="round"></path><path d="M4 7l8 6 8-6" stroke="#0A57BE" stroke-width="2" stroke-linejoin="round"></path></svg>
+            </span>
+            <span style="font-size: 17px; color: #24405C;">[tu correo]</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="width: 44px; height: 44px; border-radius: 14px; background: #EAF3FC; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1.1 1A16 16 0 014 5.1 1 1 0 015 4z" stroke="#0A57BE" stroke-width="2" stroke-linejoin="round"></path></svg>
+            </span>
+            <a href="https://wa.me/50588239594" style="font-size: 17px; color: #24405C; text-decoration: none;">8823 9594</a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="width: 44px; height: 44px; border-radius: 14px; background: #EAF3FC; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5" stroke="#0A57BE" stroke-width="2"></rect><circle cx="12" cy="12" r="3.6" stroke="#0A57BE" stroke-width="2"></circle><circle cx="17" cy="7" r="1.2" fill="#0A57BE"></circle></svg>
+            </span>
+            <a href="https://www.instagram.com/mukurus_agencia/" style="font-size: 17px; color: #24405C; text-decoration: none;">@mukurus_agencia</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="box-sizing: border-box; padding: 36px; background: #F5F9FD; border: 1px solid #D8E7F5; border-radius: 26px; display: flex; flex-direction: column; gap: 18px;">
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <label for="nombre" style="font-size: 15px; font-weight: 600; color: #24405C;">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre y empresa" style="box-sizing: border-box; height: 50px; padding: 0 16px; border: 1px solid #C9DDF0; border-radius: 14px; background: #FFFFFF; font-family: Quicksand, sans-serif; font-size: 16px; color: #10243A;">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <label for="correo" style="font-size: 15px; font-weight: 600; color: #24405C;">Correo</label>
+          <input id="correo" name="correo" type="email" placeholder="hola@tumarca.com" style="box-sizing: border-box; height: 50px; padding: 0 16px; border: 1px solid #C9DDF0; border-radius: 14px; background: #FFFFFF; font-family: Quicksand, sans-serif; font-size: 16px; color: #10243A;">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <label for="servicio" style="font-size: 15px; font-weight: 600; color: #24405C;">Paquete de interés</label>
+          <select id="servicio" name="servicio" style="box-sizing: border-box; height: 50px; padding: 0 12px; border: 1px solid #C9DDF0; border-radius: 14px; background: #FFFFFF; font-family: Quicksand, sans-serif; font-size: 16px; color: #10243A;">
+            <option>NIDO · Especial Emprendedores</option>
+            <option>NIDO · Esencial</option>
+            <option>VUELO · Crecimiento</option>
+            <option>CIELO · Premium</option>
+            <option>PLUMAJE · Identidad de marca</option>
+            <option>HÁBITAT · Diseño web</option>
+            <option>Todavía no lo sé</option>
+          </select>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px;">
+          <label for="mensaje" style="font-size: 15px; font-weight: 600; color: #24405C;">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="3" placeholder="Contame qué necesitás y para cuándo" style="box-sizing: border-box; height: 92px; padding: 14px 16px; border: 1px solid #C9DDF0; border-radius: 14px; background: #FFFFFF; font-family: Quicksand, sans-serif; font-size: 16px; color: #10243A; resize: none;"></textarea>
+        </div>
+        <button type="button" style="height: 54px; border: none; border-radius: 999px; background: {{accent}}; color: #1B2A3A; font-family: Quicksand, sans-serif; font-size: 17px; font-weight: 700; cursor: pointer;">Enviar mensaje</button>
+      </div>
+
+    </div>
+  </div><div style="width: 1440px; height: 160px; box-sizing: border-box; padding: 0 72px; display: flex; align-items: center; justify-content: space-between; background-color: #1b2a3a">
+    <a href="#inicio" style="display: flex; align-items: center; justify-content: center; width: 92px; height: 92px; background: #FFFFFF; border-radius: 22px;">
+      <img src="/_blob/034a8c77c56c3dabdce0d4c4ac7e9948" alt="Mukurus" style="width: 78px; height: 78px; object-fit: contain;">
+    </a>
+    <p style="margin: 0; font-size: 26px; color: #B9D3EC">Branding | Social Media | Fotografía · Nicaragua</p>
+    <div style="display: flex; gap: 22px;">
+      <a href="#paquetes" style="font-size: 15px; color: #B9D3EC; text-decoration: none;">Paquetes</a>
+      <a href="#portafolio" style="font-size: 15px; color: #B9D3EC; text-decoration: none;">Portafolio</a>
+      <a href="#contacto" style="font-size: 15px; color: #B9D3EC; text-decoration: none;">Contacto</a>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#F5B421","options":["#F5B421","#17B8B0","#E4573F","#FFFFFF"]},"$preview":{"width":1440,"height":4450}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#F5B421' };
+  }
+}
+</script>
+</body>
+</html>

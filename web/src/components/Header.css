@@ -1,0 +1,189 @@
+.site-header {
+  --tile: 72px;
+  --bar-pad: 16px;
+  --focus: var(--sun);
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  background: var(--blue);
+  color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.site-header.is-compact {
+  --tile: 56px;
+  --bar-pad: 10px;
+  box-shadow: 0 10px 30px rgba(8, 48, 102, 0.22);
+}
+
+@media (min-width: 1024px) {
+  .site-header {
+    --tile: 112px;
+    --bar-pad: 34px;
+  }
+
+  .site-header.is-compact {
+    --tile: 64px;
+    --bar-pad: 14px;
+  }
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: var(--bar-pad);
+  transition: padding 0.3s var(--ease-out);
+}
+
+/* Logo sin fondo, ocupando el mismo lugar que tenía la baldosa del prototipo */
+.brand-logo {
+  flex: none;
+  display: grid;
+  place-items: center;
+  height: var(--tile);
+  border-radius: 12px;
+}
+
+.brand-logo img {
+  width: auto;
+  height: calc(var(--tile) * 0.74);
+  transition: height 0.3s var(--ease-out);
+}
+
+/* Navegación en píldora (escritorio) */
+.nav-pill {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nav-pill {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 10px 26px rgba(8, 48, 102, 0.18);
+    --focus: var(--blue);
+  }
+}
+
+.nav-pill a {
+  padding: 12px 24px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.nav-pill a:hover {
+  background: var(--mist);
+}
+
+.nav-pill a.is-active {
+  background: var(--blue);
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-cta {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-cta span {
+  display: none;
+}
+
+.menu-btn {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .header-cta {
+    display: inline-flex;
+    gap: 10px;
+    width: auto;
+    padding-inline: 4px;
+    background: none;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .header-cta span {
+    display: inline;
+  }
+
+  .header-cta:hover span {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .menu-btn,
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Menú desplegable (móvil y tablet) */
+.mobile-menu {
+  --focus: var(--blue);
+  display: grid;
+  gap: 12px;
+  margin: 0 12px 12px;
+  padding: 12px;
+  border-radius: 22px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  animation: menu-in 0.25s var(--ease-out);
+}
+
+.mobile-menu nav {
+  display: grid;
+}
+
+.mobile-menu nav a {
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobile-menu nav a.is-active {
+  background: var(--mist);
+  color: var(--blue);
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}

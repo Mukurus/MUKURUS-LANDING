@@ -1,0 +1,365 @@
+.packages {
+  background: var(--paper);
+}
+
+.packages-note {
+  max-width: 400px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.packages-note b {
+  color: var(--ink-2);
+}
+
+/* ---------- Tarjetas de paquete ---------- */
+
+.plans {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+@media (min-width: 640px) {
+  .plans {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .plans {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.plan {
+  perspective: 1400px;
+}
+
+/* Las dos caras comparten la misma celda: la tarjeta mide lo que la cara más alta. */
+.plan-inner {
+  display: grid;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.75s var(--ease-out);
+}
+
+.plan-face {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 460px;
+  padding: 32px 28px;
+  border-radius: 24px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.plan-front {
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.plan-back {
+  --focus: var(--sun);
+  justify-content: center;
+  background: var(--navy);
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+.plan-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--sun);
+  color: var(--night);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.plan-tier {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.plan-name {
+  margin-top: 6px;
+  font-family: var(--display);
+  font-size: 28px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.plan-pricing {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+
+/* Rojo de la marca, un punto más oscuro para que el texto blanco cumpla contraste */
+.plan-installments {
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #d6312d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(214, 49, 45, 0.28);
+}
+
+.plan-amount {
+  font-family: var(--display);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--blue);
+}
+
+.plan-per {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.plan-features {
+  flex-grow: 1;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.plan-features li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.plan-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sky);
+}
+
+.plan-summary {
+  font-size: 17px;
+  line-height: 1.55;
+  color: #d6e8fa;
+}
+
+.plan-back .plan-tier {
+  color: var(--teal-light);
+}
+
+.plan-back .plan-name,
+.plan-back .plan-amount {
+  color: #fff;
+}
+
+.plan-back .plan-per {
+  color: #d6e8fa;
+}
+
+.plan-back .btn,
+.plan-cta-touch {
+  min-height: 50px;
+  font-size: 16px;
+}
+
+/* Paquete destacado */
+.plan--featured .plan-front {
+  --focus: var(--sun);
+  border-color: var(--blue);
+  background: var(--blue);
+  box-shadow: 0 22px 44px rgba(10, 87, 190, 0.28);
+}
+
+.plan--featured .plan-front .plan-tier {
+  color: var(--teal-light);
+}
+
+.plan--featured .plan-front .plan-name,
+.plan--featured .plan-front .plan-amount {
+  color: #fff;
+}
+
+.plan--featured .plan-front .plan-per {
+  color: #d6e8fa;
+}
+
+.plan--featured .plan-front .plan-features li {
+  color: #eaf4fd;
+}
+
+.plan--featured .plan-front .plan-features li::before {
+  background: var(--teal-light);
+}
+
+/* Con mouse: la tarjeta se da vuelta al pasar o al enfocar con teclado. */
+@media (hover: hover) and (pointer: fine) {
+  .plan:hover .plan-inner,
+  .plan:focus-within .plan-inner {
+    transform: rotateY(180deg);
+  }
+
+  .plan-cta-touch {
+    display: none;
+  }
+}
+
+/* En pantallas táctiles no hay hover: se muestra solo el frente, con su botón. */
+@media (hover: none), (pointer: coarse) {
+  .plan-back {
+    display: none;
+  }
+
+  .plan-face {
+    min-height: 0;
+  }
+}
+
+/* ---------- Complementarios ---------- */
+
+.extras-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 32px;
+  margin-top: 64px;
+}
+
+.extras-head h3 {
+  font-size: clamp(28px, 2.6vw, 34px);
+  color: var(--ink);
+}
+
+.extras-head p {
+  max-width: 440px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.extras {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (min-width: 900px) {
+  .extras {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.extra {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px 32px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #fff;
+}
+
+.extra-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.extra-tier {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.extra-name {
+  margin-top: 4px;
+  font-size: 27px;
+  color: var(--ink);
+}
+
+.extra-price {
+  display: grid;
+  text-align: right;
+}
+
+.extra-price span {
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--blue);
+}
+
+.extra-price small {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.extra-features {
+  display: grid;
+  gap: 9px 20px;
+}
+
+@media (min-width: 520px) {
+  .extra-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.extra-features li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.extra-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal-light);
+}
+
+.extra-link {
+  align-self: flex-start;
+  font-size: 15px;
+}
+
+.singles {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.singles b {
+  color: var(--ink-2);
+}

@@ -1,0 +1,90 @@
+/* Plumas que cruzan con el viento y nubes que derivan.
+   Solo se animan transform y opacity: corren en el compositor sin repintar. */
+
+.feather {
+  --travel: 280px;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  transform: rotate(var(--rot));
+  animation: viento var(--dur, 15s) linear var(--delay, 0s) infinite;
+  will-change: transform, opacity;
+}
+
+.feather img {
+  height: auto;
+}
+
+@media (min-width: 1100px) {
+  .feather {
+    --travel: 560px;
+  }
+}
+
+@keyframes viento {
+  0% {
+    transform: translate(-60px, 0) rotate(calc(var(--rot) - 4deg));
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  30% {
+    transform: translate(calc(var(--travel) * 0.21), -30px) rotate(calc(var(--rot) + 9deg));
+  }
+  55% {
+    transform: translate(calc(var(--travel) * 0.48), 9px) rotate(calc(var(--rot) - 7deg));
+  }
+  80% {
+    transform: translate(calc(var(--travel) * 0.75), -21px) rotate(calc(var(--rot) + 5deg));
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--travel), 0) rotate(calc(var(--rot) - 4deg));
+    opacity: 0;
+  }
+}
+
+/* Nube: elipse con borde difuso por gradiente, sin filter: blur (más barato de pintar) */
+.cloud {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(255 255 255 / var(--o)) 30%, rgb(255 255 255 / 0) 100%);
+}
+
+.cloud--drift {
+  --drift: 260px;
+  animation: deriva var(--dur) linear var(--delay) infinite;
+  will-change: transform, opacity;
+}
+
+@media (min-width: 1100px) {
+  .cloud--drift {
+    --drift: 520px;
+  }
+}
+
+@keyframes deriva {
+  0% {
+    transform: translateX(-70px);
+    opacity: 0;
+  }
+  14%,
+  86% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(var(--drift));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feather {
+    opacity: 1;
+  }
+}

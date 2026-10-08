@@ -1,0 +1,125 @@
+.contact {
+  background: #fff;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 48px;
+}
+
+@media (min-width: 960px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 72px;
+  }
+}
+
+.contact-lead {
+  max-width: 460px;
+  margin-top: 16px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.contact-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--mist);
+  color: var(--blue);
+}
+
+.contact-list a,
+.contact-text {
+  font-size: 17px;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 18px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: var(--paper);
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  font: 500 16px/1.4 var(--text);
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s;
+}
+
+.field textarea {
+  min-height: 96px;
+  padding-block: 14px;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #6b7f96;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(10, 87, 190, 0.25);
+}
+
+.contact-form .btn {
+  min-height: 54px;
+  margin-top: 4px;
+  font-size: 17px;
+}
+
+.form-note {
+  font-size: 14px;
+  text-align: center;
+  color: var(--muted);
+}

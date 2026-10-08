@@ -1,0 +1,55 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 4450,
+      "is_interactive": true,
+      "title": "Landing — escritorio",
+      "w": 1440,
+      "x": -89,
+      "y": -456
+    },
+    "Movil.dc.html": {
+      "expand": "fill",
+      "h": 4530,
+      "is_interactive": true,
+      "title": "Landing — móvil",
+      "w": 390,
+      "x": 1520,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-20T12:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "pendientes": {
+      "color": "orange",
+      "text": "Lo que falta, marcado entre corchetes: [TU LOGO] en el encabezado y el pie, [Video vertical del equipo] en el hero (9:16), [PRECIO] en los tres paquetes, las imágenes del portafolio, las reseñas reales y tus datos de contacto.",
+      "w": 320,
+      "x": 1990,
+      "y": 0
+    },
+    "titulo": {
+      "kind": "title1",
+      "maxW": 1910,
+      "text": "Prototipo de sitio — BluTeam",
+      "w": 240,
+      "x": -11,
+      "y": -583
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Movil.dc.html"
+  ],
+  "pages": [],
+  "title": "Web BluTeam — Diseño & Community Management"
+}

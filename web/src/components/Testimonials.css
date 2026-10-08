@@ -1,0 +1,120 @@
+.reviews {
+  overflow: hidden;
+  background: linear-gradient(180deg, #eaf4fc 0%, #d3e8f9 100%);
+}
+
+.reviews-head {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.marquee {
+  --gap: 26px;
+  position: relative;
+  z-index: 2;
+  margin-top: 48px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: var(--gap);
+  width: max-content;
+  padding: 8px 0 28px;
+  animation: carrusel 42s linear infinite;
+}
+
+/* Se pausa al pasar el mouse o al tocar, para poder leer tranquilo */
+.marquee:hover .marquee-track,
+.marquee:active .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes carrusel {
+  to {
+    transform: translateX(calc(-50% - var(--gap) / 2));
+  }
+}
+
+.review {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 20px;
+  width: min(420px, 82vw);
+  margin: 0;
+  padding: 32px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+  color: var(--star);
+}
+
+.review blockquote {
+  flex: 1;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.review figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.review-name {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.review-role {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Sin animación: lista con scroll horizontal y sin la copia */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .marquee-track {
+    padding-inline: clamp(20px, 5vw, 72px);
+  }
+
+  .review {
+    scroll-snap-align: center;
+  }
+
+  .review[aria-hidden='true'] {
+    display: none;
+  }
+}

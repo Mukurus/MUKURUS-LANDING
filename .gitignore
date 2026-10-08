@@ -1,0 +1,20 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Builds
+dist/
+dist-ssr/
+.vite/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+
+# Los archivos .env se versionan intencionalmente en este repositorio.

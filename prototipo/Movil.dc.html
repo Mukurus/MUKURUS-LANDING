@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>BluTeam — Landing móvil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap">
+  <style>
+    body { margin: 0; font-family: Quicksand, "Segoe UI", sans-serif; background: #F5F9FD; }
+    a { color: #0A57BE; } a:hover { color: #063F8C; }
+  </style>
+  <style>
+@keyframes dc-fade-up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes dc-viento{0%{transform:translate(-60px,0) rotate(calc(var(--rot,0deg) - 4deg));opacity:0}8%{opacity:1}30%{transform:translate(63px,-22px) rotate(calc(var(--rot,0deg) + 9deg))}55%{transform:translate(144px,7px) rotate(calc(var(--rot,0deg) - 7deg))}80%{transform:translate(225px,-15px) rotate(calc(var(--rot,0deg) + 5deg))}92%{opacity:1}100%{transform:translate(300px,0) rotate(calc(var(--rot,0deg) - 4deg));opacity:0}}
+@keyframes dc-drift{0%{transform:translateX(-70px);opacity:0}14%{opacity:.85}86%{opacity:.85}100%{transform:translateX(260px);opacity:0}}
+@keyframes dc-rise{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+.pluma{animation:dc-viento 15s linear infinite}
+.pluma:nth-of-type(2n){animation-duration:19s;animation-delay:-7s}
+.pluma:nth-of-type(3n){animation-duration:12s;animation-delay:-4s}
+.pluma:nth-of-type(5n){animation-duration:22s;animation-delay:-13s}
+.nube{animation:dc-drift 64s linear infinite}
+.nube:nth-of-type(2n){animation-duration:82s;animation-delay:-30s}
+.nube:nth-of-type(3n){animation-duration:71s;animation-delay:-55s}
+#inicio>div{animation:dc-fade-up .8s ease backwards}
+#paquetes,#portafolio,#resenas,#contacto{animation:dc-fade-up .7s ease backwards;animation-delay:.1s}
+.tarjeta{animation:dc-rise .6s ease backwards;transition:transform .22s ease,box-shadow .22s ease}
+.tarjeta:nth-child(2){animation-delay:.08s}
+.tarjeta:nth-child(3){animation-delay:.16s}
+.tarjeta:nth-child(4){animation-delay:.24s}
+.tarjeta:hover{transform:translateY(-8px);box-shadow:0 28px 52px rgba(8,48,102,.2)}
+.obra>div:first-child{transition:transform .35s ease}
+.obra:hover>div:first-child{transform:scale(1.06)}
+a,button{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,opacity .18s ease}
+a:hover,button:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(8,48,102,.18)}
+a:active,button:active{transform:translateY(0);box-shadow:none}
+nav a:hover{background:#EAF3FC;box-shadow:none;transform:none}
+input,select,textarea{transition:box-shadow .18s ease}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(10,87,190,.25)}
+video{transition:transform .4s ease}
+video:hover{transform:scale(1.03)}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+  </style>
+</helmet>
+<div style="width: 390px; height: 4530px; box-sizing: border-box; overflow: hidden; background: #F5F9FD; color: #10243A;">
+
+  <!-- HERO -->
+  <div style="position: relative; width: 390px; height: 940px; box-sizing: border-box; overflow: hidden; background: linear-gradient(180deg, #0A57BE 0%, #1B79DC 48%, #8FC6F0 82%, #EAF4FC 100%);">
+    <div class="nube" style="position: absolute; left: -110px; top: 640px; width: 220px; height: 110px; border-radius: 999px; background: #FFFFFF; opacity: 0.75; filter: blur(16px);"></div>
+    <div class="nube" style="position: absolute; right: -50px; bottom: 20px; width: 320px; height: 150px; border-radius: 999px; background: #FFFFFF; opacity: 0.9; filter: blur(18px);"></div>
+    <div class="nube" style="position: absolute; left: -40px; bottom: -20px; width: 280px; height: 140px; border-radius: 999px; background: #FFFFFF; opacity: 0.85; filter: blur(18px);"></div>
+
+    <div class="pluma" style="position: absolute; left: 6px; top: 470px; transform: rotate(-22deg); --rot: -22deg;">
+      <img src="/_blob/e937974ebbad4644e7a72ea2947d2362" alt="" style="display: block; width: 120px; height: 78px;">
+    </div>
+    <div class="pluma" style="position: absolute; right: 14px; top: 520px; transform: rotate(22deg); --rot: 22deg;">
+      <img src="/_blob/4e099d270f70a0f2655584544da7f254" alt="" style="display: block; width: 96px; height: 71px;">
+    </div>
+    <div class="pluma" style="position: absolute; left: 14px; top: 648px; transform: rotate(40deg); --rot: 40deg;">
+      <img src="/_blob/a4d8e8d71631b2cd8cea1794dff3aa7e" alt="" style="display: block; width: 70px; height: 70px;">
+    </div>
+
+    <div style="position: absolute; left: 0; top: 0; width: 390px; box-sizing: border-box; padding: 22px 20px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="#" style="display: flex; align-items: center; justify-content: center; width: 72px; height: 72px; background: #FFFFFF; border-radius: 18px; box-shadow: 0 8px 20px rgba(8, 48, 102, 0.18);">
+        <img src="/_blob/034a8c77c56c3dabdce0d4c4ac7e9948" alt="Mukurus" style="width: 60px; height: 60px; object-fit: contain;">
+      </a>
+      <button type="button" aria-label="Abrir menú" style="width: 46px; height: 46px; border: none; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="#10243A" stroke-width="2.2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div style="position: absolute; left: 0; top: 118px; width: 390px; box-sizing: border-box; padding: 0 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+      <h1 style="margin: 0; font-family: Copeland, Georgia, serif; font-size: 50px; line-height: 1.04; font-weight: 600; color: #FFFFFF; letter-spacing: -1px;">
+        Diseñá tu marca.<br>Vela <span style="font-style: italic; color: #A9E9E4;">volar</span>
+      </h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #FFFFFF;">Diseño gráfico y community management para marcas que quieren verse bien y sonar mejor.</p>
+      <a href="#" style="display: flex; align-items: center; gap: 12px; padding: 17px 28px; border-radius: 999px; background: #E23B37; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 700; box-shadow: 0 12px 26px rgba(8, 48, 102, 0.25);">
+        Ver paquetes
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 12h15M13 6l6 6-6 6" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div style="position: absolute; left: 88px; top: 424px; width: 214px; height: 386px; padding: 8px; box-sizing: border-box; background: #FFFFFF; border-radius: 26px; box-shadow: 0 20px 40px rgba(8, 48, 102, 0.26);">
+      <div style="position: relative; width: 198px; height: 370px; border-radius: 19px; overflow: hidden; background: #123C6E;">
+        <video src="/_blob/7c3b6d8620e5de834644012a2ccd5b43" autoplay loop muted playsinline style="display: block; width: 198px; height: 370px; object-fit: cover;"></video>
+        <div style="position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 10px 12px; box-sizing: border-box; border-radius: 14px; background: rgba(6, 34, 68, 0.72);">
+          <div style="font-family: Copeland, Georgia, serif; font-size: 17px; font-weight: 600; color: #FFFFFF;">Conocé al equipo</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="position: absolute; left: 24px; bottom: 34px; margin: 0; font-family: Copeland, Georgia, serif; font-size: 24px; line-height: 1.22; font-weight: 600; color: #0D3260;">
+      Diseño con intención,<br>redes con <span style="color: #0F8F89;">estrategia</span>
+    </p>
+  </div>
+
+  <!-- PAQUETES -->
+  <div style="width: 390px; height: 2750px; box-sizing: border-box; padding: 44px 20px 0; background: #F5F9FD;">
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #0A57BE;">Tarifario 2026</span>
+    <h2 style="margin: 10px 0 0; font-family: Copeland, Georgia, serif; font-size: 34px; line-height: 1.12; font-weight: 600; color: #10243A;">Elegí a qué altura volar</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 26px;">
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 330px; padding: 24px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 22px; display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #0A57BE;">Nido</span>
+          <h3 style="margin: 5px 0 0; font-family: Copeland, Georgia, serif; font-size: 24px; font-weight: 600; color: #10243A;">Especial Emprendedores</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 30px; font-weight: 700; color: #0A57BE;">USD 80</span>
+          <span style="font-size: 14px; color: #46607C;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">4 publicaciones al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">4 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">1 reel corto al mes (hasta 20 seg)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Programación de contenido</li>
+        </ul>
+        <a href="#" style="display: block; padding: 13px; border-radius: 999px; border: 2px solid #0A57BE; color: #0A57BE; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+      </div>
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 400px; padding: 24px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 22px; display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #0A57BE;">Nido</span>
+          <h3 style="margin: 5px 0 0; font-family: Copeland, Georgia, serif; font-size: 24px; font-weight: 600; color: #10243A;">Esencial</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 30px; font-weight: 700; color: #0A57BE;">USD 110</span>
+          <span style="font-size: 14px; color: #46607C;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">8 publicaciones al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">4 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">1 reel corto al mes (hasta 30 seg)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">1 sesión fotográfica básica (15–20 fotos editadas)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Programación y respuesta básica a comentarios</li>
+        </ul>
+        <a href="#" style="display: block; padding: 13px; border-radius: 999px; border: 2px solid #0A57BE; color: #0A57BE; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+      </div>
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 540px; padding: 24px; background: #0A57BE; border-radius: 22px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 18px 34px rgba(10, 87, 190, 0.26);">
+        <div>
+          <span style="display: inline-block; padding: 5px 12px; border-radius: 999px; background: {{accent}}; color: #1F1F1F; font-size: 12px; font-weight: 700;">El más elegido</span>
+          <div style="margin-top: 10px; font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #A9E9E4;">Vuelo</div>
+          <h3 style="margin: 5px 0 0; font-family: Copeland, Georgia, serif; font-size: 24px; font-weight: 600; color: #FFFFFF;">Crecimiento</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 30px; font-weight: 700; color: #FFFFFF;">USD 170</span>
+          <span style="font-size: 14px; color: #D6E8FA;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.4; color: #EAF4FD;">12 publicaciones al mes (posts y carruseles)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #EAF4FD;">8 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #EAF4FD;">3 reels cortos al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #EAF4FD;">1 sesión fotográfica ampliada (20–25 fotos)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #EAF4FD;">Estrategia y calendario editorial mensual</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #EAF4FD;">Gestión activa de comentarios y mensajes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #EAF4FD;">Reporte mensual de métricas</li>
+        </ul>
+        <a href="#" style="display: block; padding: 13px; border-radius: 999px; background: {{accent}}; color: #1F1F1F; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+      </div>
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 480px; padding: 24px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 22px; display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #0A57BE;">Cielo</span>
+          <h3 style="margin: 5px 0 0; font-family: Copeland, Georgia, serif; font-size: 24px; font-weight: 600; color: #10243A;">Premium</h3>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 30px; font-weight: 700; color: #0A57BE;">USD 250</span>
+          <span style="font-size: 14px; color: #46607C;">/ mes</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; flex-grow: 1;">
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">20 publicaciones al mes (posts y carruseles)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">12 historias al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">4 reels cortos al mes</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">2 sesiones fotográficas (1 ampliada + 1 básica)</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Calendario estratégico y apoyo en campañas pagadas</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Reporte detallado y reunión mensual de resultados</li>
+        </ul>
+        <a href="#" style="display: block; padding: 13px; border-radius: 999px; border: 2px solid #0A57BE; color: #0A57BE; text-align: center; text-decoration: none; font-size: 15px; font-weight: 700;">Cotizar</a>
+      </div>
+
+    </div>
+
+    <h3 style="margin: 32px 0 0; font-family: Copeland, Georgia, serif; font-size: 26px; font-weight: 600; color: #10243A;">Paquetes complementarios</h3>
+    <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #46607C;">Resuelven la pieza que falta antes o durante un paquete principal.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 270px; padding: 24px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 22px; display: flex; flex-direction: column; gap: 12px;">
+        <div>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #0F8F89;">Plumaje</span>
+          <h4 style="margin: 5px 0 0; font-family: Copeland, Georgia, serif; font-size: 23px; font-weight: 600; color: #10243A;">Identidad de marca</h4>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 28px; font-weight: 700; color: #0A57BE;">USD 250</span>
+          <span style="font-size: 14px; color: #46607C;">proyecto único</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Logotipo y variaciones</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Paleta y tipografía de marca</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Manual básico de uso de marca</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Plantillas base para redes</li>
+        </ul>
+      </div>
+
+      <div class="tarjeta" style="box-sizing: border-box; height: 270px; padding: 24px; background: #FFFFFF; border: 1px solid #D8E7F5; border-radius: 22px; display: flex; flex-direction: column; gap: 12px;">
+        <div>
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #0F8F89;">Hábitat</span>
+          <h4 style="margin: 5px 0 0; font-family: Copeland, Georgia, serif; font-size: 23px; font-weight: 600; color: #10243A;">Diseño web</h4>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <span style="font-family: Copeland, Georgia, serif; font-size: 28px; font-weight: 700; color: #0A57BE;">USD 400</span>
+          <span style="font-size: 14px; color: #46607C;">proyecto único</span>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Sitio de 3 a 5 secciones</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Diseño responsive</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Integración con redes y WhatsApp</li>
+          <li style="font-size: 15px; line-height: 1.4; color: #24405C;">Velocidad y SEO on-page básico</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p style="margin: 20px 0 0; font-size: 14px; line-height: 1.55; color: #46607C;">Precios en dólares, mínimo 2 meses de permanencia en los paquetes mensuales. También hay tarifario individual: historia USD 7, post USD 10, carrusel USD 17.</p>
+  </div>
+
+  <!-- PORTAFOLIO -->
+  <div style="width: 390px; height: 480px; box-sizing: border-box; padding: 40px 20px 0; background: #FFFFFF;">
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #0A57BE;">Portafolio</span>
+    <h2 style="margin: 10px 0 0; font-family: Copeland, Georgia, serif; font-size: 34px; line-height: 1.12; font-weight: 600; color: #10243A;">Marcas con las que trabajé</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px;">
+      <div class="tarjeta obra" style="border-radius: 18px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <img src="/_blob/4ec27d37496f5ddb76f833c3e1ed0e2c" alt="Branding para China Mall Corporative" style="display: block; width: 100%; height: 92px; object-fit: cover;">
+        <div style="padding: 12px;"><span style="font-size: 14px; font-weight: 700; color: #10243A;">China Mall Corporative</span></div>
+      </div>
+      <div class="tarjeta obra" style="border-radius: 18px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <div style="height: 92px; background: linear-gradient(135deg, #E4573F 0%, #F5B421 100%);"></div>
+        <div style="padding: 12px;"><span style="font-size: 14px; font-weight: 700; color: #10243A;">Kelly Valle Coach</span></div>
+      </div>
+      <div class="tarjeta obra" style="border-radius: 18px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <div style="height: 92px; background: linear-gradient(135deg, #0F8F89 0%, #86C2EE 100%);"></div>
+        <div style="padding: 12px;"><span style="font-size: 14px; font-weight: 700; color: #10243A;">Los Pipitos Nicaragua</span></div>
+      </div>
+      <div class="tarjeta obra" style="border-radius: 18px; overflow: hidden; border: 1px solid #E1ECF7;">
+        <div style="height: 92px; background: linear-gradient(135deg, #1B2A3A 0%, #0A57BE 100%);"></div>
+        <div style="padding: 12px;"><span style="font-size: 14px; font-weight: 700; color: #10243A;">Nick Tuckler</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEÑA -->
+  <div style="width: 390px; height: 260px; box-sizing: border-box; padding: 34px 20px 0; background: linear-gradient(180deg, #EAF4FC 0%, #D3E8F9 100%);">
+    <div class="tarjeta" style="box-sizing: border-box; height: 190px; padding: 22px; background: #FFFFFF; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 12px 26px rgba(8, 48, 102, 0.12);">
+      <div style="display: flex; gap: 3px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9z" fill="#E0A414"></path></svg>
+      </div>
+      <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #24405C;">[Pegá aquí la reseña real de tu cliente]</p>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div style="width: 38px; height: 38px; border-radius: 999px; background: #0A57BE;"></div>
+        <div>
+          <div style="font-size: 15px; font-weight: 700; color: #10243A;">[Nombre]</div>
+          <div style="font-size: 13px; color: #46607C;">China Mall Corporative</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div style="width: 390px; height: 100px; box-sizing: border-box; padding: 26px 20px 0; background: #D3E8F9;">
+    <a href="#" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 54px; border-radius: 999px; background: #0A57BE; color: #FFFFFF; text-decoration: none; font-size: 17px; font-weight: 700;">
+      Contame de tu marca
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 12h15M13 6l6 6-6 6" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#F5A81C","options":["#F5A81C","#E23B37","#52A9B8","#1F1F1F"]},"$preview":{"width":390,"height":4530}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#F5A81C' };
+  }
+}
+</script>
+</body>
+</html>
