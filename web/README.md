@@ -43,6 +43,8 @@ pnpm preview      # sirve dist/ en http://localhost:4173
 
 **Agregar el correo:** completá `contact.email` en `src/content.ts` y aparece solo en la sección de contacto.
 
+**Cambiar el video del equipo:** reemplazá `src/assets/media/equipo-mukurus.mp4` (720×1280, H.264, sin audio, con `faststart`) y su poster `equipo-mukurus-poster.webp`, conservando los nombres. Vite les cambia el hash en cada build, así que nadie ve la versión anterior guardada en caché. El original en alta calidad está en `prototipo/assets/video-equipo-original.mp4`.
+
 ## Cómo está armado
 
 ```
@@ -53,10 +55,9 @@ src/
   main.tsx          entrada del navegador (hidrata el HTML)
   entry-server.tsx  entrada del pre-renderizado
   components/       una sección por archivo, cada una con su CSS
-  assets/           logo, plumas e imágenes (Vite les agrega hash para cache)
+  assets/           logos, plumas, imágenes y el video del equipo (Vite les agrega hash para cache)
 public/
   fonts/            Copeland en WOFF2, solo caracteres latinos
-  media/            video del equipo (720p, sin audio) y su poster
 scripts/
   prerender.mjs     genera dist/index.html, robots.txt y sitemap.xml
 ```

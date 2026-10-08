@@ -1,11 +1,10 @@
 import { useEffect, useRef, type CSSProperties } from 'react';
+import VIDEO_SRC from '../assets/media/equipo-mukurus.mp4';
+import POSTER_SRC from '../assets/media/equipo-mukurus-poster.webp';
 import { brand } from '../content';
 import { Cloud, Feather, plumas } from './Sky';
 import { IconArrow } from './Icons';
 import './Hero.css';
-
-const VIDEO_SRC = '/media/equipo-mukurus.mp4';
-const POSTER_SRC = '/media/equipo-mukurus-poster.webp';
 
 const order = (i: number) => ({ '--i': i }) as CSSProperties;
 
