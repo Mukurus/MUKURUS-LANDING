@@ -24,8 +24,9 @@ Requisitos: Node 24 o superior y [pnpm](https://pnpm.io/).
 ```bash
 cd web
 pnpm install
-pnpm dev        # servidor de desarrollo
-pnpm build      # build de producción en web/dist
+pnpm dev          # servidor de desarrollo (recarga al guardar)
+pnpm dev --watch  # lo mismo + chequeo de tipos de TypeScript al guardar
+pnpm build        # build de producción en web/dist
 ```
 
 La configuración del entorno vive en `web/.env` (ver `web/.env.example`).
