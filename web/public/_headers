@@ -1,0 +1,19 @@
+# Caché HTTP del sitio (formato _headers de Cloudflare Pages y Netlify).
+#
+# El HTML, robots.txt, sitemap.xml y los íconos no tienen regla: usan el valor
+# por defecto del hosting (max-age=0, must-revalidate), así cada publicación se
+# ve al instante. No agregar una regla /* con Cache-Control: los encabezados de
+# reglas que coinciden se concatenan y chocarían con las de abajo.
+
+# JS, CSS, imágenes y fuentes que Vite genera con hash en el nombre.
+# Si el archivo cambia, cambia su nombre, así que nunca hace falta revalidarlos.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Archivos de public/ sin hash: si se reemplazan conservando el nombre, las
+# visitas que vuelven los ven actualizados a más tardar al vencer el max-age.
+/fonts/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/media/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

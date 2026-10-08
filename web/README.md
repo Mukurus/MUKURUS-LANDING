@@ -24,6 +24,7 @@ pnpm preview    # sirve dist/ en http://localhost:4173
    - comando de build: `pnpm build`
    - carpeta de salida: `dist`
    - variable de entorno: `SITE_URL`
+4. La caché del navegador se configura en `public/_headers`: los archivos con hash de `assets/` se guardan un año y el HTML se revalida en cada visita. Cloudflare Pages y Netlify lo leen solos; en Vercel hay que pasar esas reglas a `vercel.json`.
 
 ## Dónde se edita cada cosa
 
