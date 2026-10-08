@@ -1,4 +1,4 @@
-import logo from '../assets/logo-mukurus-claro.webp';
+import logo from '../assets/logo-mukurus-footer.webp';
 import { brand, contact } from '../content';
 import './Footer.css';
 
@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="wrap footer-main">
         <a className="footer-logo" href="#inicio">
-          <img src={logo} alt="Mukurus, volver al inicio" width={480} height={327} loading="lazy" />
+          <img src={logo} alt="Mukurus, volver al inicio" width={374} height={256} loading="lazy" />
         </a>
         <p className="footer-tagline">Branding | Social Media | Fotografía · {brand.city}, {brand.country}</p>
         <nav className="footer-nav" aria-label="Pie de página">
