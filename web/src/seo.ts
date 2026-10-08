@@ -6,10 +6,10 @@ import { brand, contact, extras, plans } from './content';
 export const seo = {
   title: 'Agencia de redes sociales y branding en Nicaragua | Mukurus',
   description:
-    'Agencia creativa en Managua: redes sociales, branding, fotografía y diseño web en toda Nicaragua. Paquetes desde USD 80 al mes, pagables en 2 cuotas.',
+    'Agencia creativa en Managua: redes sociales, branding, fotografía y diseño web en toda Nicaragua. Paquetes desde USD 80 al mes.',
   ogTitle: 'Mukurus · Agencia creativa en Nicaragua',
   ogDescription:
-    'Redes sociales, branding, fotografía y diseño web desde Managua a toda Nicaragua. Paquetes desde USD 80 al mes, pagables en 2 cuotas.',
+    'Redes sociales, branding, fotografía y diseño web desde Managua a toda Nicaragua. Paquetes desde USD 80 al mes.',
   ogImage: '/og-image.jpg',
   ogImageAlt: 'Mukurus: Somos Aves, nuestra forma de volar es crear',
   locale: 'es_NI',

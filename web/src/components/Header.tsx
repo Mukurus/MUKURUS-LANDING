@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import logo from '../assets/logo-mukurus-claro.webp';
+import logo from '../assets/logo-mukurus.webp';
 import { nav, whatsappLink } from '../content';
 import { IconClose, IconMenu, IconWhatsApp } from './Icons';
 import './Header.css';

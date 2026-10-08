@@ -10,7 +10,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       <p className="plan-price">
         <span className="plan-amount">{usd(plan.price)}</span> <span className="plan-per">/ mes</span>
       </p>
-      <p className="plan-installments">{installments.label}</p>
+      {plan.installments && <p className="plan-installments">{installments.label}</p>}
     </div>
   );
 
@@ -52,6 +52,8 @@ function PlanCard({ plan }: { plan: Plan }) {
 }
 
 export default function Packages() {
+  const installmentPlan = plans.find((plan) => plan.installments);
+
   return (
     <section id="paquetes" className="section packages" aria-labelledby="paquetes-title">
       <div className="wrap">
@@ -63,8 +65,13 @@ export default function Packages() {
             </h2>
           </div>
           <p className="packages-note">
-            <b>Precios en dólares.</b> Los paquetes mensuales se pueden <b>pagar en {installments.count} cuotas</b> y
-            requieren un <b>mínimo de permanencia de 2 meses.</b> La <b>pauta publicitaria</b> se cotiza <b>aparte.</b>
+            <b>Precios en dólares.</b> Los paquetes mensuales requieren un <b>mínimo de permanencia de 2 meses</b>
+            {installmentPlan && (
+              <>
+                {' '}y el paquete <b>{installmentPlan.name}</b> se puede <b>pagar en {installments.count} cuotas</b>
+              </>
+            )}
+            . La <b>pauta publicitaria</b> se cotiza <b>aparte.</b>
           </p>
         </div>
 

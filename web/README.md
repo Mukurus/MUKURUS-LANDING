@@ -7,10 +7,11 @@ Sitio de una sola página hecho con Vite + React + TypeScript. En el build se pr
 Requiere Node 24 o superior y pnpm.
 
 ```bash
-pnpm install    # instalar dependencias
-pnpm dev        # servidor de desarrollo en http://localhost:5173
-pnpm build      # build de producción en dist/
-pnpm preview    # sirve dist/ en http://localhost:4173
+pnpm install      # instalar dependencias
+pnpm dev          # servidor de desarrollo en http://localhost:5173 (recarga al guardar)
+pnpm dev --watch  # lo mismo + chequeo de tipos de TypeScript al guardar
+pnpm build        # build de producción en dist/
+pnpm preview      # sirve dist/ en http://localhost:4173
 ```
 
 ## Antes de publicar
@@ -24,6 +25,7 @@ pnpm preview    # sirve dist/ en http://localhost:4173
    - comando de build: `pnpm build`
    - carpeta de salida: `dist`
    - variable de entorno: `SITE_URL`
+4. La caché del navegador se configura en `public/_headers`: los archivos con hash de `assets/` se guardan un año y el HTML se revalida en cada visita. Cloudflare Pages y Netlify lo leen solos; en Vercel hay que pasar esas reglas a `vercel.json`.
 
 ## Dónde se edita cada cosa
 
