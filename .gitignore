@@ -17,4 +17,7 @@ Thumbs.db
 desktop.ini
 .idea/
 
+# Worktrees de Claude Code
+.claude/worktrees/
+
 # Los archivos .env se versionan intencionalmente en este repositorio.
