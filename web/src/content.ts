@@ -15,7 +15,7 @@ export const brand = {
   year: 2026,
 };
 
-// Aplica a los paquetes mensuales (Nido, Vuelo y Cielo).
+// Aplica solo a los paquetes marcados con `installments: true` (hoy, Vuelo Crecimiento).
 export const installments = {
   count: 2,
   label: '¡Pagalo en 2 cuotas!',
@@ -55,6 +55,8 @@ export type Plan = {
   features: string[];
   summary: string;
   featured?: boolean;
+  // Muestra el tag de pago en cuotas.
+  installments?: boolean;
 };
 
 export const plans: Plan[] = [
@@ -92,6 +94,7 @@ export const plans: Plan[] = [
     name: 'Crecimiento',
     price: 170,
     featured: true,
+    installments: true,
     features: [
       '12 publicaciones al mes (posts y carruseles)',
       '8 historias al mes',
