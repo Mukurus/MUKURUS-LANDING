@@ -1,0 +1,10 @@
+# Configuración de Netlify. El sitio vive en web/: Netlify instala y compila
+# ahí, y publica web/dist (la landing pre-renderizada, con su index.html).
+[build]
+  base = "web"
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+  PNPM_VERSION = "11.15.1"

@@ -21,9 +21,10 @@ pnpm preview      # sirve dist/ en http://localhost:4173
    SITE_URL=https://www.tu-dominio.com
    ```
 2. Corré `pnpm build`. Con `SITE_URL` definida se generan el canonical, `og:url`, `og:image` (la vista previa en WhatsApp e Instagram) y `sitemap.xml`. Sin `SITE_URL` el build igual funciona, pero avisa que esas etiquetas faltan.
-3. Subí la carpeta `dist/` a cualquier hosting estático con HTTPS (Cloudflare Pages, Netlify, Vercel). Si conectás el repositorio, la configuración es:
+3. El sitio se publica en Netlify desde la rama `master`. La configuración está en `netlify.toml` (raíz del repo): compila `web/` con `pnpm build` (Node 24, pnpm 11) y publica `web/dist`. Si no definís `SITE_URL`, el build usa la URL del sitio que entrega Netlify (el dominio propio cuando se conecta uno). En otro hosting estático la configuración es:
+   - carpeta base: `web`
    - comando de build: `pnpm build`
-   - carpeta de salida: `dist`
+   - carpeta de salida: `web/dist`
    - variable de entorno: `SITE_URL`
 4. La caché del navegador se configura en `public/_headers`: los archivos con hash de `assets/` se guardan un año y el HTML se revalida en cada visita. Cloudflare Pages y Netlify lo leen solos; en Vercel hay que pasar esas reglas a `vercel.json`.
 

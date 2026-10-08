@@ -16,7 +16,11 @@ try {
   // Sin .env: se usa SITE_URL del entorno, si existe.
 }
 
-const siteUrl = (process.env.SITE_URL ?? '').trim().replace(/\/+$/, '');
+// En Netlify, si no hay SITE_URL, se usa la URL principal del sitio que entrega
+// el build: el dominio propio cuando se conecta uno; si no, el de netlify.app.
+const siteUrl = (process.env.SITE_URL || (process.env.NETLIFY === 'true' ? process.env.URL : '') || '')
+  .trim()
+  .replace(/\/+$/, '');
 if (siteUrl && !/^https?:\/\/[^/]+$/.test(siteUrl)) {
   throw new Error(`SITE_URL debe ser solo el dominio con protocolo, por ejemplo https://www.mukurus.com (recibido: ${siteUrl})`);
 }
